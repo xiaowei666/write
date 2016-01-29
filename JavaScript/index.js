@@ -8,6 +8,7 @@ window.onload=function(){//注意：所有的代码哦度要写在这两个大�
 	green = Math.floor(Math.random()*255),
 	blue = Math.floor(Math.random()*255),
 	suiji = Math.floor(Math.random()*121),
+	jishu = document.getElementsByClassName('jishu'),
 	jihe = [];
 	for(var i = 0 ; i < 52 ; i ++){
 		anniu = document.createElement('div');
@@ -29,6 +30,8 @@ window.onload=function(){//注意：所有的代码哦度要写在这两个大�
 	jj = 59 ,
 	xiao = document.getElementById('xiao');
 	var body = document.getElementById('body'),guanbi = false;
+	jishu[0].innerHTML = '剩余字母 : '+anniu.length ;
+
 document.onkeydown = function(e){
 	var 
 	top = out.firstElementChild;
@@ -39,6 +42,7 @@ document.onkeydown = function(e){
 	}
 	top.style.background = 'white' ;
 	out.removeChild(top);
+	jishu[0].innerHTML = '剩余字母 : '+anniu.length ;
 	// if(out.children.length == 0 ) location.reload() ; 
 	clearInterval(time); 
 	time= setInterval(function(){
@@ -68,9 +72,11 @@ document.onkeydown = function(e){
 			}
 		}
 	},1000);
-	
-	
-}
+	var again = document.getElementsByClassName('jjj');
+	again[0].onclick = function(){
+		location.reload();
+	}
+};
 
 
 
